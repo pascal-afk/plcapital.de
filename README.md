@@ -1,222 +1,392 @@
-# PLCapital.de - Trading Strategien Plattform
+# PLCapital - Trading Strategien Plattform
+
+[![Cloudflare Pages](https://img.shields.io/badge/Cloudflare-Pages-orange)](https://pages.cloudflare.com/)
+[![Hono](https://img.shields.io/badge/Hono-Framework-blue)](https://hono.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
 
 ## 🎯 Projekt-Übersicht
-- **Name**: PLCapital.de
-- **Ziel**: Professionelle Plattform für Erstellung und Automatisierung von Trading-Strategien
-- **Features**: Strategy Builder, Backtesting, Live Trading, Portfolio Management
 
-## 🌐 URLs
-- **GitHub**: https://github.com/pascal-afk/plcapital.de
-- **Production**: https://251a3cb0.plcapital-de.pages.dev
-- **Main Branch**: https://plcapital-de.pages.dev
-- **API Health**: https://251a3cb0.plcapital-de.pages.dev/api/health
-- **Domain**: plcapital.de (geplant)
+**PLCapital.de** ist eine moderne, KI-gestützte Plattform für die Erstellung und Automatisierung von Handelsstrategien. Trader können ohne Programmierkenntnisse professionelle Trading-Strategien entwickeln, mit historischen Daten testen und automatisieren.
 
-## 📊 Aktuell implementierte Features
+### Hauptfunktionen (geplant)
+- 🤖 **KI-Strategie Builder** - Strategien mit KI-Unterstützung erstellen
+- 📊 **Backtesting Engine** - Historische Performance-Tests
+- 🎯 **Strategie Templates** - Vordefinierte Trading-Strategien
+- ⚙️ **Automation** - 24/7 automatisierte Ausführung
+- 📈 **Performance Analytics** - Umfassende Analysen und Metriken
 
-### ✅ Basis-Infrastruktur
-- Hono + Cloudflare Pages Setup
-- Responsive Landing Page
-- API Health-Check Endpoint
-- Static File Serving
-- Git Repository & GitHub Integration
+---
 
-### ✅ UI-Komponenten
-- **Navigation**: Responsive Header mit Branding
-- **Hero Section**: Gradient-Hintergrund, CTA-Buttons
-- **Features Grid**: 3 Hauptfeatures (Automatisierung, Analyse, Sicherheit)
-- **Design**: Glassmorphic Style inspiriert von fanshow.ai
-- **Status Badge**: Live-Status-Anzeige mit Animation
+## 🚀 URLs & Zugriff
 
-### ✅ API-Endpunkte
-- `GET /api/health` - System Health Check
-- `GET /api/strategies` - Strategien-Liste (Placeholder)
+### Entwicklung
+- **Local Dev Server**: `http://localhost:3000`
+- **API Health**: `http://localhost:3000/api/health`
 
-## 🚧 Noch nicht implementiert
+### Production
+- **Cloudflare Pages**: TBD (nach Deployment)
+- **Custom Domain**: plcapital.de (nach DNS-Konfiguration)
+- **GitHub Repository**: https://github.com/pascal-afk/plcapital.de
 
-### Phase 1: User Management
-- [ ] Registration & Login
-- [ ] JWT Authentication
-- [ ] User Profiles
-- [ ] Password Reset
+---
 
-### Phase 2: Strategy Builder
-- [ ] Drag & Drop Interface
-- [ ] Technical Indicators
-- [ ] Conditional Logic Builder
-- [ ] Strategy Templates
+## 🏗️ Tech Stack & Architektur
 
-### Phase 3: Backtesting
-- [ ] Historical Data Integration
-- [ ] Backtesting Engine
-- [ ] Performance Metrics
-- [ ] Visual Reports
+### Backend
+- **Framework**: [Hono](https://hono.dev/) v4 - Ultraschnelles Edge-Framework
+- **Runtime**: Cloudflare Workers/Pages
+- **Language**: TypeScript 5.0
+- **Build Tool**: Vite 5.0
 
-### Phase 4: Live Trading
-- [ ] Broker Integrations
-- [ ] Paper Trading
-- [ ] Live Order Execution
-- [ ] Risk Management
+### Frontend
+- **JavaScript**: Vanilla ES6+
+- **Styling**: TailwindCSS (CDN)
+- **Icons**: FontAwesome 6.4.0
+- **Animations**: Custom CSS + Intersection Observer
 
-### Phase 5: Analytics Dashboard
-- [ ] Portfolio Overview
-- [ ] Performance Charts
-- [ ] Trade History
-- [ ] Real-time Market Data
+### Deployment & Infrastructure
+- **Hosting**: Cloudflare Pages
+- **CDN**: Cloudflare Global Network
+- **Dev Server**: PM2 + Wrangler Pages Dev
+- **Version Control**: Git + GitHub
 
-## 🏗️ Datenarchitektur
+### Geplante Services
+- **Database**: Cloudflare D1 (SQLite)
+- **KV Storage**: Cloudflare KV (User Sessions)
+- **AI**: Google Gemini API
+- **Analytics**: Cloudflare Web Analytics
 
-### Geplante Datenmodelle
-```typescript
-// User
-interface User {
-  id: string
-  email: string
-  name: string
-  created_at: Date
-}
+---
 
-// Strategy
-interface Strategy {
-  id: string
-  user_id: string
-  name: string
-  description: string
-  config: StrategyConfig
-  status: 'draft' | 'active' | 'paused'
-  created_at: Date
-}
+## 📁 Projekt-Struktur
 
-// Trade
-interface Trade {
-  id: string
-  strategy_id: string
-  symbol: string
-  type: 'buy' | 'sell'
-  price: number
-  quantity: number
-  timestamp: Date
-}
+```
+webapp/
+├── src/
+│   └── index.tsx              # Hono App Entry Point + HTML
+├── public/
+│   └── static/
+│       └── app.js             # Frontend JavaScript
+├── dist/                      # Build Output (generiert)
+│   ├── _worker.js             # Compiled Hono Worker
+│   └── _routes.json           # Routing Config
+├── node_modules/              # Dependencies
+├── package.json               # NPM Config & Scripts
+├── vite.config.ts             # Vite Build Config
+├── wrangler.jsonc             # Cloudflare Config
+├── tsconfig.json              # TypeScript Config
+├── ecosystem.config.cjs       # PM2 Dev Server Config
+├── .gitignore                 # Git Ignore Rules
+├── PROJECT.md                 # Detaillierte Projekt-Dokumentation
+└── README.md                  # Diese Datei
 ```
 
-### Speicher-Services (geplant)
-- **Cloudflare D1**: User & Strategy Data (SQLite)
-- **Cloudflare KV**: Session Management & Cache
-- **Cloudflare R2**: Strategy Backtest Results & Reports
+---
 
-## 📖 Benutzer-Anleitung
+## 🛠️ Setup & Installation
 
-### Lokale Entwicklung
+### Voraussetzungen
+- Node.js 18+ & npm
+- Git
+- Cloudflare Account (für Deployment)
+- PM2 (vorinstalliert in Sandbox)
 
-1. **Repository klonen**:
+### Lokale Entwicklung starten
+
 ```bash
+# 1. Repository klonen
 git clone https://github.com/pascal-afk/plcapital.de.git
 cd plcapital.de
-```
 
-2. **Dependencies installieren**:
-```bash
+# 2. Dependencies installieren
 npm install
-```
 
-3. **Development Server starten**:
-```bash
-# Build first
+# 3. Projekt bauen
 npm run build
 
-# Start with PM2
+# 4. Development Server starten (mit PM2)
 pm2 start ecosystem.config.cjs
 
-# Test
-curl http://localhost:3000
+# 5. Im Browser öffnen
+# http://localhost:3000
 ```
 
-4. **Logs anzeigen**:
-```bash
-pm2 logs plcapital-de --nostream
-```
+### Nützliche Befehle
 
-### Deployment auf Cloudflare Pages
-
-1. **Build erstellen**:
 ```bash
+# Build erstellen
 npm run build
+
+# Development Server (Sandbox)
+npm run dev:sandbox
+
+# Port 3000 bereinigen
+npm run clean-port
+
+# API testen
+npm test
+# oder: curl http://localhost:3000/api/health
+
+# Logs anzeigen
+pm2 logs plcapital-dev --nostream
+
+# Service neu starten
+pm2 restart plcapital-dev
+
+# Service stoppen
+pm2 delete plcapital-dev
 ```
 
-2. **Zu Cloudflare deployen**:
+---
+
+## 🚀 Deployment
+
+### Cloudflare Pages Deployment
+
 ```bash
+# 1. Projekt bauen
+npm run build
+
+# 2. Auf Cloudflare Pages deployen
+npm run deploy:prod
+
+# Oder manuell:
 npx wrangler pages deploy dist --project-name plcapital-de
 ```
 
-3. **Mit Custom Domain**:
+### Automatisches Deployment
+Nach jedem Push auf `main`:
+1. GitHub Actions (geplant) triggert Build
+2. Wrangler deployed zu Cloudflare Pages
+3. Live-URL wird aktualisiert
+
+### Custom Domain konfigurieren
 ```bash
+# Domain zu Cloudflare Pages hinzufügen
 npx wrangler pages domain add plcapital.de --project-name plcapital-de
 ```
 
-## 🔄 Git Workflow
+---
 
+## 📊 Daten-Architektur
+
+### Aktuell (MVP)
+- **Storage**: localStorage (Frontend)
+- **Persistenz**: Browser-basiert, keine Backend-DB
+
+### Geplant (Phase 2)
+```
+Cloudflare D1 Database (SQLite)
+├── users              # User Profiles & Auth
+├── strategies         # Trading Strategies
+├── backtests          # Backtest Results
+└── templates          # Strategy Templates
+
+Cloudflare KV
+├── sessions           # User Sessions
+└── rate_limits        # API Rate Limiting
+```
+
+### Datenmodelle (siehe PROJECT.md für Details)
+- User Profile
+- Trading Strategy
+- Backtest Result
+- Trade Record
+
+---
+
+## 🎨 Design System
+
+### Farben
+- **Primary Gradient**: `#667eea → #764ba2` (Purple)
+- **Secondary**: `#3b82f6` (Blue)
+- **Success**: `#10b981` (Green)
+- **Background**: `#0f1724, #1a2332` (Dark)
+- **Text**: `#ffffff, #d1d5db` (White/Gray)
+
+### Komponenten
+- **Feature Cards** - Hover-Lift-Effekt mit Shadow
+- **Hero Section** - Gradient Background + Animated Entrance
+- **CTAs** - Purple Gradient + Scale Animation
+- **Navigation** - Sticky Header mit Smooth Scroll
+
+### Design-Referenz
+Inspiriert von [fanshow.ai](https://fanshow.ai):
+- Moderne Hero-Sections
+- Smooth Animations
+- Clean Card-Layouts
+- Gradient Accents
+
+---
+
+## 📝 API Dokumentation
+
+### Aktuelle Endpoints
+
+#### Health Check
+```http
+GET /api/health
+```
+
+**Response**:
+```json
+{
+  "status": "ok",
+  "service": "PLCapital Trading Strategy Platform",
+  "timestamp": "2025-11-01T12:00:00.000Z"
+}
+```
+
+### Geplante Endpoints
+
+#### Strategie erstellen
+```http
+POST /api/strategies/create
+Content-Type: application/json
+
+{
+  "name": "RSI Reversal",
+  "description": "RSI-based mean reversion",
+  "rules": { ... }
+}
+```
+
+#### Backtest ausführen
+```http
+POST /api/strategies/backtest
+Content-Type: application/json
+
+{
+  "strategy_id": "abc123",
+  "start_date": "2023-01-01",
+  "end_date": "2024-01-01"
+}
+```
+
+---
+
+## 🧪 Testing
+
+### Manuelles Testing
 ```bash
-# Änderungen committen
+# API Health Check
+curl http://localhost:3000/api/health
+
+# Static Assets
+curl http://localhost:3000/static/app.js
+```
+
+### Geplant
+- Unit Tests (Vitest)
+- E2E Tests (Playwright)
+- Performance Tests (Lighthouse CI)
+
+---
+
+## 🔐 Sicherheit
+
+### Implementiert
+- ✅ `.gitignore` für sensitive Dateien
+- ✅ Environment Variables für Secrets
+- ✅ CORS für API-Routen
+
+### Geplant
+- ⏳ Rate Limiting
+- ⏳ User Authentication (OAuth)
+- ⏳ Input Validation
+- ⏳ API Key Rotation
+- ⏳ Content Security Policy
+
+---
+
+## 🤝 Entwicklung
+
+### Git Workflow
+```bash
+# Feature entwickeln
+git checkout -b feature/strategy-builder
+# ... Änderungen machen ...
 git add .
-git commit -m "Beschreibung der Änderungen"
+git commit -m "feat: Add strategy builder component"
+git push origin feature/strategy-builder
 
-# Zu GitHub pushen
+# Merge in main
+git checkout main
+git merge feature/strategy-builder
 git push origin main
-
-# Build & Deploy
-npm run build
-npx wrangler pages deploy dist --project-name plcapital-de
 ```
 
-## 🚀 Deployment-Status
+### Commit Conventions
+- `feat:` Neue Features
+- `fix:` Bug-Fixes
+- `docs:` Dokumentation
+- `refactor:` Code-Refactoring
+- `style:` Styling-Änderungen
+- `test:` Tests hinzufügen
 
-- **Platform**: Cloudflare Pages
-- **Status**: ✅ Live & Aktiv
-- **Production URL**: https://251a3cb0.plcapital-de.pages.dev
-- **Tech Stack**: Hono + TypeScript + TailwindCSS + Cloudflare Workers
-- **Last Deployed**: 2025-11-01
-- **Last Updated**: 2025-11-01
+---
 
-## 🛠️ Verfügbare Scripts
+## 📚 Dokumentation
 
-```bash
-npm run dev              # Vite Dev Server
-npm run dev:sandbox      # Wrangler Pages Dev (Sandbox)
-npm run build            # Vite Build
-npm run preview          # Preview Production Build
-npm run deploy           # Build + Deploy
-npm run deploy:prod      # Deploy mit Projekt-Name
-npm run clean-port       # Port 3000 freigeben
-npm run test             # API Test mit curl
-```
+### Für Entwickler
+- **PROJECT.md** - Detaillierte Projekt-Dokumentation (für KI-Systeme optimiert)
+- **README.md** - Diese Datei (technische Übersicht)
+- **Code Comments** - Inline-Dokumentation im Code
 
-## 🔐 Environment Variables
+### Externe Resources
+- [Hono Dokumentation](https://hono.dev/)
+- [Cloudflare Pages Docs](https://developers.cloudflare.com/pages/)
+- [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/)
 
-Aktuell keine Environment Variables erforderlich. Für zukünftige Features:
+---
 
-```env
-# .dev.vars (lokal)
-DATABASE_URL=...
-API_KEY=...
-```
+## 🗓️ Roadmap
 
-## 📦 Dependencies
+### ✅ Phase 1 - Foundation (Aktuell)
+- [x] Projekt-Setup
+- [x] Landing Page Design
+- [x] GitHub Integration
+- [x] Cloudflare Setup
+- [ ] Initial Deployment
 
-### Production
-- `hono`: ^4.0.0 - Web Framework
+### ⏳ Phase 2 - Core Features
+- [ ] Strategy Builder UI
+- [ ] Template System
+- [ ] Backtesting Engine
+- [ ] User Profile Management
+- [ ] KI-Integration (Gemini)
 
-### Development
-- `@cloudflare/workers-types`: ^4.20250705.0
-- `@hono/vite-cloudflare-pages`: ^0.4.2
-- `vite`: ^5.0.0
-- `wrangler`: ^3.78.0
-- `typescript`: ^5.0.0
+### 📅 Phase 3 - Advanced
+- [ ] Live Trading Integration
+- [ ] Strategy Marketplace
+- [ ] Subscription System
+- [ ] Mobile App (PWA)
+- [ ] Social Features
 
-## 🤝 Contributing
+---
 
-Dieses Projekt wird von Pascal entwickelt. Für Fragen oder Verbesserungsvorschläge:
-- **GitHub Issues**: https://github.com/pascal-afk/plcapital.de/issues
-- **Email**: pascal@raluecht.com
+## 📈 Performance Ziele
+
+- **First Contentful Paint**: < 1.5s
+- **Time to Interactive**: < 3s
+- **Lighthouse Score**: > 90
+- **Bundle Size**: < 200KB (gzipped)
+
+---
+
+## 🐛 Bekannte Issues
+
+Keine bekannten Issues (neu gestartet).
+
+---
+
+## 📞 Support & Kontakt
+
+- **GitHub Issues**: [plcapital.de/issues](https://github.com/pascal-afk/plcapital.de/issues)
+- **Developer**: Pascal (pascal-afk)
+- **Projekt Status**: ✅ Initial Development
+
+---
 
 ## 📄 Lizenz
 
@@ -224,6 +394,6 @@ Proprietary - Alle Rechte vorbehalten
 
 ---
 
-**Letzte Aktualisierung**: 2025-11-01  
-**Version**: 1.0.0  
-**Entwickler**: Pascal (@pascal-afk)
+**Last Updated**: 2025-11-01
+**Version**: 0.1.0
+**Status**: 🚧 In Development
