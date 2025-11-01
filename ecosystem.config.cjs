@@ -1,7 +1,8 @@
+// PM2 Configuration for PLCapital Development
 module.exports = {
   apps: [
     {
-      name: 'plcapital-de',
+      name: 'plcapital-dev',
       script: 'npx',
       args: 'wrangler pages dev dist --ip 0.0.0.0 --port 3000',
       env: {

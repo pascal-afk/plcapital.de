@@ -7,7 +7,9 @@
 
 ## 🌐 URLs
 - **GitHub**: https://github.com/pascal-afk/plcapital.de
-- **Production**: (wird nach erstem Deployment verfügbar)
+- **Production**: https://251a3cb0.plcapital-de.pages.dev
+- **Main Branch**: https://plcapital-de.pages.dev
+- **API Health**: https://251a3cb0.plcapital-de.pages.dev/api/health
 - **Domain**: plcapital.de (geplant)
 
 ## 📊 Aktuell implementierte Features
@@ -169,8 +171,10 @@ npx wrangler pages deploy dist --project-name plcapital-de
 ## 🚀 Deployment-Status
 
 - **Platform**: Cloudflare Pages
-- **Status**: 🚧 Initial Setup (noch nicht deployed)
+- **Status**: ✅ Live & Aktiv
+- **Production URL**: https://251a3cb0.plcapital-de.pages.dev
 - **Tech Stack**: Hono + TypeScript + TailwindCSS + Cloudflare Workers
+- **Last Deployed**: 2025-11-01
 - **Last Updated**: 2025-11-01
 
 ## 🛠️ Verfügbare Scripts

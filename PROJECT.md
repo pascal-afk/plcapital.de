@@ -1,276 +1,309 @@
-# PLCapital.de - Projekt Dokumentation für KI-Agenten
+# PLCapital - Trading Strategien Plattform
 
-## 🎯 Projekt-Übersicht
+## 🎯 Projektübersicht
 
-**Projekt Name**: PLCapital.de  
-**Zweck**: Plattform für Erstellung und Automatisierung von Trading-Strategien  
-**Status**: In aktiver Entwicklung  
-**Version**: 1.0.0  
-**Letzte Aktualisierung**: 2025-11-01
+**PLCapital.de** ist eine KI-gestützte Plattform zur Erstellung und Automatisierung von Handelsstrategien für Trader. Die Plattform ermöglicht es Nutzern ohne Programmierkenntnisse, professionelle Trading-Strategien zu entwickeln, zu testen und zu automatisieren.
 
----
-
-## 📋 Was ist PLCapital.de?
-
-Eine professionelle Web-Plattform für Trader, die:
-- Trading-Strategien visuell erstellen können
-- Strategien automatisieren und testen können
-- Echtzeit-Marktanalysen durchführen können
-- Ihre Trading-Performance überwachen können
-
-**Design-Inspiration**: fanshow.ai (modernes, glassmorphisches Design)  
-**Funktionale Referenz**: https://plcapital-de-handels-system-architekt-286916261399.us-west1.run.app/
+### Projektstatus
+- **Phase**: Initial Development ✅ DEPLOYED
+- **Version**: 1.0.0
+- **Letztes Update**: 2025-11-01
+- **Produktions-URL**: https://251a3cb0.plcapital-de.pages.dev
+- **Main Branch URL**: https://plcapital-de.pages.dev
+- **API Health**: https://251a3cb0.plcapital-de.pages.dev/api/health
+- **GitHub**: https://github.com/pascal-afk/plcapital.de
 
 ---
 
-## 🏗️ Technologie-Stack
+## 📋 Funktionale Anforderungen
 
-### Frontend
-- **Framework**: Vanilla JavaScript mit Hono SSR
-- **Styling**: TailwindCSS (via CDN)
-- **Icons**: Font Awesome 6.4.0
-- **HTTP Client**: Axios 1.6.0
+### Kernfunktionen (Priorität 1 - In Entwicklung)
+1. ✅ **Landing Page** - Moderne, ansprechende Startseite mit Hero-Section
+2. ⏳ **KI-Strategie Builder** - Interaktive Strategie-Erstellung mit KI-Unterstützung
+3. ⏳ **Backtesting Engine** - Historische Tests mit Performance-Metriken
+4. ⏳ **Strategie-Templates** - Vordefinierte Strategien (RSI, MA-Cross, MACD, etc.)
+5. ⏳ **User Profile Management** - Speicherung von Präferenzen und Risikoprofil
 
-### Backend
-- **Framework**: Hono (Cloudflare Workers)
-- **Runtime**: Cloudflare Pages
-- **Language**: TypeScript
-- **Build Tool**: Vite
+### Features (Priorität 2 - Geplant)
+6. ⏳ **Trading Automation** - 24/7 automatisierte Strategieausführung
+7. ⏳ **Performance Dashboard** - Echtzeit-Monitoring und Analytics
+8. ⏳ **Strategie Marketplace** - Teilen und Veröffentlichen von Strategien
+9. ⏳ **Educational Content** - KI-generierte Trading-Tipps und Artikel
+10. ⏳ **Subscription System** - Freemium-Modell mit Backtest-Limits
 
-### Deployment
-- **Platform**: Cloudflare Pages
-- **CDN**: Cloudflare Global Network
-- **Domain**: plcapital.de (geplant)
-- **Git**: GitHub Repository `pascal-afk/plcapital.de`
+### Erweiterte Features (Priorität 3 - Zukünftig)
+11. ⏳ **Live Trading Integration** - Broker-API-Anbindung
+12. ⏳ **Social Trading** - Community-Features und Strategy Sharing
+13. ⏳ **Mobile App** - iOS/Android Progressive Web App
+14. ⏳ **Coaching & Support** - Live-Chat und Voice-Calls mit KI
 
 ---
 
-## 📁 Projektstruktur
+## 🏗️ Technische Architektur
 
+### Tech Stack
+- **Framework**: Hono (Edge-first Web Framework)
+- **Runtime**: Cloudflare Workers/Pages
+- **Frontend**: Vanilla JavaScript + TailwindCSS
+- **Backend**: TypeScript + Hono API Routes
+- **Deployment**: Cloudflare Pages
+- **CI/CD**: GitHub Actions (geplant)
+- **Monitoring**: Cloudflare Analytics
+
+### Projektstruktur
 ```
-webapp/
+/home/user/webapp/
 ├── src/
-│   └── index.tsx              # Haupt-Hono-App mit Routes
+│   └── index.tsx           # Hono App Entry Point
 ├── public/
 │   └── static/
-│       ├── app.js             # Frontend JavaScript
-│       └── styles.css         # Custom CSS
-├── migrations/                 # Datenbank-Migrationen (zukünftig)
-├── dist/                      # Build Output (generiert)
-├── wrangler.jsonc             # Cloudflare Konfiguration
-├── vite.config.ts             # Vite Build Konfiguration
-├── tsconfig.json              # TypeScript Konfiguration
-├── ecosystem.config.cjs       # PM2 Konfiguration für Sandbox
-├── package.json               # Dependencies & Scripts
-├── PROJECT.md                 # Diese Datei
-└── README.md                  # Technische Dokumentation
+│       └── app.js          # Frontend JavaScript
+├── dist/                   # Build Output (auto-generiert)
+├── package.json
+├── vite.config.ts
+├── wrangler.jsonc          # Cloudflare Config
+├── tsconfig.json
+├── ecosystem.config.cjs    # PM2 Dev Server Config
+├── .gitignore
+├── PROJECT.md              # Diese Datei
+└── README.md               # Technische Dokumentation
+
+```
+
+### API Endpoints (Current)
+- `GET /` - Landing Page
+- `GET /api/health` - Health Check
+
+### API Endpoints (Geplant)
+- `POST /api/strategies/create` - Neue Strategie erstellen
+- `POST /api/strategies/backtest` - Backtest ausführen
+- `GET /api/strategies/:id` - Strategie abrufen
+- `POST /api/strategies/:id/publish` - Strategie veröffentlichen
+- `GET /api/templates` - Verfügbare Templates abrufen
+- `POST /api/user/profile` - User-Profil speichern
+
+---
+
+## 🎨 Design System
+
+### Farben (basierend auf fanshow.ai)
+- **Primary**: Purple/Violet (#667eea → #764ba2)
+- **Secondary**: Blue (#3b82f6)
+- **Accent**: Green (#10b981)
+- **Background**: Dark (#0f1724, #1a2332)
+- **Text**: White/Gray (#ffffff, #d1d5db)
+
+### Typografie
+- **Headings**: Bold, große Schrift (48-60px)
+- **Body**: 16-18px, gray-600
+- **CTAs**: Semibold, 18px
+
+### Komponenten
+- **Feature Cards**: Hover-Effekt mit lift + shadow
+- **Hero Section**: Gradient background + animated entrance
+- **CTAs**: Purple gradient, hover scale animation
+- **Icons**: FontAwesome 6.4.0
+
+---
+
+## 📊 Datenmodelle (Geplant)
+
+### User Profile
+```typescript
+{
+  id: string
+  name: string
+  email: string
+  persona: "Conservative" | "Balanced" | "Aggressive"
+  risk_tolerance: number (1-10)
+  preferences: {
+    markets: string[]
+    timeframes: string[]
+  }
+  created_at: timestamp
+}
+```
+
+### Trading Strategy
+```typescript
+{
+  id: string
+  user_id: string
+  name: string
+  description: string
+  rules: {
+    entry: Rule[]
+    exit: Rule[]
+  }
+  indicators: Indicator[]
+  backtest_results: BacktestResult
+  is_published: boolean
+  created_at: timestamp
+}
+```
+
+### Backtest Result
+```typescript
+{
+  id: string
+  strategy_id: string
+  performance: {
+    total_return: number
+    sharpe_ratio: number
+    max_drawdown: number
+    win_rate: number
+  }
+  equity_curve: DataPoint[]
+  trades: Trade[]
+  executed_at: timestamp
+}
 ```
 
 ---
 
-## ✅ Bereits implementiert (Stand: 2025-11-01)
+## 🔄 Entwicklungs-Workflow
 
-### Phase 1: Initial Setup ✅
-- [x] Hono + Cloudflare Pages Projekt-Setup
-- [x] Git Repository initialisiert
-- [x] GitHub Repository verbunden (`pascal-afk/plcapital.de`)
-- [x] Cloudflare API Token konfiguriert
-- [x] Basis-Projektstruktur erstellt
+### Standard Workflow
+1. **Änderungen machen** im Code
+2. **Git Commit** mit aussagekräftiger Message
+3. **GitHub Push** automatisch
+4. **Cloudflare Deploy** nach Push
+5. **Testen** der Live-URL
+6. **Dokumentation updaten** (PROJECT.md, README.md)
 
-### Phase 2: Basis-UI ✅
-- [x] Landing Page mit Hero Section
-- [x] Responsive Navigation
-- [x] Features Grid (3 Hauptfeatures)
-- [x] Glassmorphic Design (fanshow.ai-inspiriert)
-- [x] Gradient-Hintergrund (Slate/Purple)
-- [x] Status-Badge mit Animation
-
-### Phase 3: API Grundlagen ✅
-- [x] Health-Check Endpoint (`/api/health`)
-- [x] Strategies Endpoint Placeholder (`/api/strategies`)
-- [x] CORS-Konfiguration für API
-- [x] Static File Serving (`/static/*`)
-
----
-
-## 🚧 Noch nicht implementiert
-
-### Phase 4: User Authentication
-- [ ] User Registration & Login
-- [ ] JWT-basierte Authentifizierung
-- [ ] Session Management
-- [ ] Passwort-Reset-Funktion
-
-### Phase 5: Strategy Builder
-- [ ] Visueller Strategie-Editor (Drag & Drop)
-- [ ] Strategy Templates
-- [ ] Technische Indikatoren (MA, RSI, MACD, etc.)
-- [ ] Bedingungen & Trigger-System
-- [ ] Strategy Preview/Visualization
-
-### Phase 6: Backtesting Engine
-- [ ] Historische Marktdaten-Integration
-- [ ] Backtesting-Algorithmus
-- [ ] Performance-Metriken (Sharpe Ratio, Drawdown, etc.)
-- [ ] Backtesting-Reports & Charts
-
-### Phase 7: Live Trading Integration
-- [ ] Broker-API-Integrationen (Interactive Brokers, Alpaca, etc.)
-- [ ] Paper Trading Mode
-- [ ] Live Order Execution
-- [ ] Position Management
-- [ ] Risk Management Controls
-
-### Phase 8: Dashboard & Analytics
-- [ ] User Dashboard
-- [ ] Portfolio Performance Charts
-- [ ] Trade History
-- [ ] Real-time Market Data
-- [ ] Alerts & Notifications
-
-### Phase 9: Database Integration
-- [ ] Cloudflare D1 Setup
-- [ ] User Data Models
-- [ ] Strategy Storage
-- [ ] Trade History Storage
-- [ ] Performance Metrics Storage
-
----
-
-## 🎨 Design-Prinzipien
-
-### Farb-Schema
-- **Primär**: Purple/Pink Gradients (#a855f7 → #ec4899)
-- **Hintergrund**: Dark Slate (#0f172a, #1e1b4b)
-- **Akzente**: Purple-600 (#9333ea)
-- **Text**: White & Gray-300
-
-### UI-Komponenten Stil
-- **Glassmorphism**: `bg-white/5 backdrop-blur-lg`
-- **Borders**: Subtile weiße Borders (`border-white/10`)
-- **Hover Effects**: Scale & Color Transitions
-- **Icons**: Font Awesome mit Purple-Akzenten
-
-### Responsive Design
-- **Mobile First**: TailwindCSS responsive utilities
-- **Breakpoints**: sm (640px), md (768px), lg (1024px)
-
----
-
-## 🔄 Automatischer Workflow
-
-**WICHTIG**: Bei jeder Änderung MUSS dieser Workflow durchgeführt werden:
-
-1. **Code ändern** → Dateien bearbeiten
-2. **Git Commit** → `git add . && git commit -m "Beschreibung"`
-3. **GitHub Push** → `git push origin main`
-4. **Build** → `npm run build`
-5. **Cloudflare Deploy** → `npx wrangler pages deploy dist --project-name plcapital-de`
-
-**Automatisierungs-Script** (geplant):
+### Git Workflow
 ```bash
-#!/bin/bash
-# deploy.sh - Automatisches Deployment
+# Änderungen committen
 git add .
-git commit -m "$1"
+git commit -m "feat: Beschreibung der Änderung"
 git push origin main
+
+# Deployment (automatisch nach Push)
+npm run deploy:prod
+```
+
+### Lokale Entwicklung
+```bash
+# Build erstellen
 npm run build
-npx wrangler pages deploy dist --project-name plcapital-de
+
+# Development Server starten
+pm2 start ecosystem.config.cjs
+
+# Logs anzeigen
+pm2 logs plcapital-dev --nostream
+
+# Service neu starten
+fuser -k 3000/tcp && npm run build && pm2 restart plcapital-dev
 ```
 
 ---
 
-## 📊 API-Endpunkte (aktuell)
+## 🚀 Deployment Status
 
-### GET `/api/health`
-**Status**: ✅ Implementiert  
-**Beschreibung**: Health-Check für API  
-**Response**:
-```json
-{
-  "status": "ok",
-  "timestamp": "2025-11-01T...",
-  "service": "PLCapital Trading Platform"
-}
-```
+### Aktuelle Umgebungen
+- **Development**: PM2 + Wrangler Pages Dev (Port 3000)
+- **Production**: TBD (Cloudflare Pages)
 
-### GET `/api/strategies`
-**Status**: 🚧 Placeholder  
-**Beschreibung**: Listet alle Strategien  
-**Response**:
-```json
-{
-  "strategies": [],
-  "message": "Trading strategies endpoint - coming soon"
-}
-```
+### Deployment Checklist
+- ✅ GitHub Repository verbunden
+- ✅ Cloudflare API Key konfiguriert
+- ⏳ Cloudflare Pages Projekt erstellt
+- ⏳ Custom Domain (plcapital.de) verknüpft
+- ⏳ CI/CD Pipeline eingerichtet
 
 ---
 
-## 🔐 Authentifizierung & Secrets
+## 📝 Offene Aufgaben (TODO)
 
-### GitHub
-- **Setup**: `setup_github_environment` bereits ausgeführt
-- **User**: pascal-afk
-- **Repo**: plcapital.de
+### Sofort (Sprint 1)
+1. ⏳ Strategy Builder UI entwickeln
+2. ⏳ Template-System implementieren
+3. ⏳ Backtesting Mock-Engine erstellen
+4. ⏳ User Profile Storage (localStorage)
+5. ⏳ Cloudflare Pages Deployment durchführen
 
-### Cloudflare
-- **Setup**: `setup_cloudflare_api_key` bereits ausgeführt
-- **Account**: pascal@raluecht.com
-- **API Token**: Als Environment Variable konfiguriert
+### Kurzfristig (Sprint 2)
+6. ⏳ KI-Integration (Gemini API) für Strategy Generation
+7. ⏳ Performance Charts mit Chart.js
+8. ⏳ Strategie-Export (Python Code Download)
+9. ⏳ Responsive Mobile Design
+10. ⏳ Cloudflare D1 Database für Persistenz
 
----
-
-## 🚀 Nächste Schritte (Empfohlen)
-
-1. **Immediate**: Initial Deployment auf Cloudflare Pages
-2. **Short-term**: User Authentication System
-3. **Mid-term**: Strategy Builder Interface
-4. **Long-term**: Live Trading Integration
-
----
-
-## 📝 Wichtige Hinweise für KI-Agenten
-
-### Deployment-Workflow
-- **IMMER** zuerst `npm run build` ausführen
-- **IMMER** nach Änderungen committen und pushen
-- **IMMER** nach GitHub Push deployen
-- **PROJECT.md** bei größeren Änderungen aktualisieren
-
-### Code-Konventionen
-- TypeScript für Backend (src/)
-- Vanilla JS für Frontend (public/static/)
-- Hono für API Routes
-- TailwindCSS für Styling (CDN)
-
-### Cloudflare-Spezifika
-- **Kein Node.js `fs` Modul** → Nutze Cloudflare D1/KV/R2
-- **Kein `serveStatic` von @hono/node-server** → Nutze `hono/cloudflare-workers`
-- **Statische Dateien** → Müssen in `public/` sein
-
-### Testing
-- Lokal: `npm run build && pm2 start ecosystem.config.cjs`
-- Test: `curl http://localhost:3000`
-- Logs: `pm2 logs plcapital-de --nostream`
+### Mittelfristig (Sprint 3+)
+11. ⏳ Subscription System mit Stripe
+12. ⏳ Strategy Marketplace
+13. ⏳ Real-time Dashboard mit WebSockets
+14. ⏳ Broker API Integration
+15. ⏳ Advanced Analytics
 
 ---
 
-## 🔗 Wichtige Links
+## 🔐 Sicherheit & Best Practices
 
-- **GitHub Repo**: https://github.com/pascal-afk/plcapital.de
-- **Referenz-Projekt**: https://plcapital-de-handels-system-architekt-286916261399.us-west1.run.app/
-- **Design-Inspiration**: fanshow.ai
-- **Cloudflare Dashboard**: https://dash.cloudflare.com/
+### Implementiert
+- ✅ .gitignore für sensitive Dateien
+- ✅ Environment Variables für API Keys
+- ✅ CORS Configuration für API
+
+### Geplant
+- ⏳ Rate Limiting für API
+- ⏳ User Authentication (OAuth)
+- ⏳ API Key Rotation
+- ⏳ Input Validation & Sanitization
+- ⏳ HTTPS Erzwingung
 
 ---
 
-## 📞 Projekt-Owner
+## 📚 Referenzen
 
-**Name**: Pascal  
-**Email**: pascal@raluecht.com  
-**GitHub**: pascal-afk
+### Design Inspiration
+- **fanshow.ai** - Moderne UI/UX, Animations, Layout-Struktur
+  - Hero-Section mit großen Headlines
+  - Feature Cards mit Hover-Effekten
+  - Gradient Backgrounds
+  - Smooth Animations
+
+### Funktionale Referenz
+- **Eigenes Projekt** (https://plcapital-de-handels-system-architekt-286916261399.us-west1.run.app/)
+  - Strategy Builder Flow
+  - Template System
+  - Backtesting Engine
+  - KI-Integration (Gemini)
+  - User Profile Management
 
 ---
 
-_Dieses Dokument wird automatisch bei jeder größeren Projektänderung aktualisiert._
+## 🤝 Entwicklernotizen
+
+### Für andere KI-Systeme
+Dieses Projekt ist so strukturiert, dass KI-Assistenten schnell verstehen können:
+- **Was**: Trading-Strategie-Plattform mit KI
+- **Wo**: Cloudflare Pages + Hono Framework
+- **Wie**: TypeScript Backend, Vanilla JS Frontend
+- **Status**: Initiale Entwicklung, Landing Page live
+- **Next Steps**: Strategy Builder, Backtesting, KI-Integration
+
+### Wichtige Konventionen
+- **Commits**: Conventional Commits (feat:, fix:, docs:, refactor:)
+- **Branches**: `main` für Production
+- **Deployment**: Automatisch nach Push
+- **Dokumentation**: Immer PROJECT.md + README.md updaten
+
+### Performance Ziele
+- **First Contentful Paint**: < 1.5s
+- **Time to Interactive**: < 3s
+- **Lighthouse Score**: > 90
+
+---
+
+## 📞 Kontakt & Support
+
+- **GitHub**: https://github.com/pascal-afk/plcapital.de
+- **Developer**: Pascal
+- **Plattform**: Cloudflare Pages + Hono
+
+---
+
+**Zuletzt aktualisiert**: 2025-11-01
+**Nächstes Review**: Nach Sprint 1 Completion
