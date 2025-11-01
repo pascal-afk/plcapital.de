@@ -6,11 +6,10 @@
 
 ### Projektstatus
 - **Phase**: Initial Development ✅ DEPLOYED
-- **Version**: 1.0.0
+- **Version**: 0.1.0
 - **Letztes Update**: 2025-11-01
-- **Produktions-URL**: https://251a3cb0.plcapital-de.pages.dev
-- **Main Branch URL**: https://plcapital-de.pages.dev
-- **API Health**: https://251a3cb0.plcapital-de.pages.dev/api/health
+- **Produktions-URL**: https://a07602c3.plcapital-de.pages.dev
+- **API Health**: https://a07602c3.plcapital-de.pages.dev/api/health
 - **GitHub**: https://github.com/pascal-afk/plcapital.de
 
 ---

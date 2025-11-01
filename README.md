@@ -24,8 +24,9 @@
 - **API Health**: `http://localhost:3000/api/health`
 
 ### Production
-- **Cloudflare Pages**: TBD (nach Deployment)
-- **Custom Domain**: plcapital.de (nach DNS-Konfiguration)
+- **Cloudflare Pages**: https://a07602c3.plcapital-de.pages.dev
+- **API Health**: https://a07602c3.plcapital-de.pages.dev/api/health
+- **Custom Domain**: plcapital.de (DNS-Konfiguration ausstehend)
 - **GitHub Repository**: https://github.com/pascal-afk/plcapital.de
 
 ---
